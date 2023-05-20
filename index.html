@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Spin Wheel Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Spin Wheel Game</h1>
+        <div class="game-section">
+            <div class="circle">
+                <div class="pointer"></div>
+                <div id="wheel">
+                    <!-- Nội dung của vòng tròn quay -->
+                </div>
+                <div id="prizes" class="prizes"></div>
+            </div>
+            <button id="spin-button" class="spin-button" onclick="startSpinning()">Spin</button>
+            <div id="spin-count" class="spin-count"></div>
+        </div>
+        <table id="result-table">
+            <thead>
+              <tr>
+                <th>Thời gian thực</th>
+                <th>Lần quay thứ n</th>
+                <th>Tên giải thưởng</th>
+              </tr>
+            </thead>
+            <tbody id="result-table-body"></tbody>
+          </table>
+        <div class="percentage-section">
+            <h2>Điều chỉnh tỉ lệ giải thưởng</h2>
+            <div id="percentage-table" class="percentage-table"></div>
+        </div>
+        <div class="bonus-section">
+            <h2>số lần được quay thêm: <span id="bonus-value" class="bonus-value"></span></h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
