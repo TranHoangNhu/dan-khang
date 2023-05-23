@@ -23,7 +23,7 @@ initialize();
 
 // Hàm khởi tạo
 function initialize() {
-  additionalSpins = 5; // Đặt số lượt quay ban đầu là 2
+  additionalSpins = 7; // Đặt số lượt quay ban đầu là 2
   bonusSpins = 0; // Đặt số lượt quay bonus ban đầu là 0
   renderPercentageTable();
   updateSpinCount();
@@ -147,7 +147,7 @@ function spin() {
 
     if (result.bonus) {
       message += ". Bạn được thêm " + result.bonus + " lượt quay!";
-      bonusSpins += result.bonus;
+      bonusSpins++;
       updateSpinCount();
       updateBonus(bonusSpins);
     }
@@ -172,7 +172,7 @@ function updateBonus(bonusValue) {
 
   // Kiểm tra nếu giá trị bonusValue là 1, thì mới cộng dồn vào biến bonusSpins
   if (bonusValue === 1) {
-    bonusSpins ++;
+    bonusSpins++;
     updateSpinCount();
   }
 }
@@ -189,6 +189,7 @@ function startSpinningAnimation() {
 
     // Áp dụng hiệu ứng quay cho giao diện
     wheel.style.transform = "rotate(" + degree + "deg)";
+    pointer.style.transform = "translateX(-50%) translateY(-50%) rotate(" + degree + "deg)";// Thêm dòng này để quay cả pointer
 
     currentSpin++;
 
